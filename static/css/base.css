@@ -2,10 +2,6 @@ html {
     height: 100%;
 }
 
-#navbar-logo {
-    height: 150px;
-}
-
 /* from Bulma */
 .icon {
     align-items: center;
