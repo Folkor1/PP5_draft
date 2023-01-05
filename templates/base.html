@@ -37,10 +37,10 @@
     <body>
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
-                <div class="col-12 col-lg-4">
-                    <a href="{% url 'home' %}" class="nav-link main-logo-link"><img class='img-fluid' src="/media/logo4.jpg" alt ='Logo Pic' id="navbar-logo"></a>
+                <div class="col-12 col-lg-5">
+                    <a href="{% url 'home' %}" class="nav-link main-logo-link"><img class='img-fluid' src="/media/logo7.jpg" alt ='Logo Pic' id="navbar-logo"></a>
                 </div>
-                <div class="col-12 col-lg-4 pt-2">
+                <div class="col-12 col-lg-3 my-auto">
                     <form method="GET" action="">
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-start" type="text" name="q" placeholder="Search our site">
@@ -54,26 +54,26 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-lg-4 my-4 py-1 py-lg-0">
+                <div class="col-12 col-lg-4 my-auto h4">
                     <div class="dropdown text-lg-end me-5">
-                        <button class="btn btn-secondary dropdown-toggle bg-black border-0 pe-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            My Account
+                        <button class="btn btn-secondary bg-black border-0 me-4 align-baseline" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p class="h4 mb-0">My Account</p> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <li><a class="dropdown-item" href="#">Product Management</a></li>
+                                    <li><a class="dropdown-item h5" href="#">Product Management</a></li>
                                 {% endif %}
-                                <li><a class="dropdown-item" href="#">My Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item h5" href="#">My Profile</a></li>
+                                <li><a class="dropdown-item h5" href="#">Logout</a></li>
                             {% else %}
-                                <li><a class="dropdown-item" href="#">Register</a></li>
-                                <li><a class="dropdown-item" href="#">Login</a></li>
+                                <li><a class="dropdown-item h5" href="#">Register</a></li>
+                                <li><a class="dropdown-item h5" href="#">Login</a></li>
                             {% endif %}
                         </ul>
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                                <div class="text-center">
+                                <div class="text-center align-baseline">
                                     <p class="my-0 text-white">
                                         {% if grand_total %}
                                             ${{ grand_total|floatformat:2 }}

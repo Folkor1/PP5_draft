@@ -2,6 +2,18 @@ html {
     height: 100%;
 }
 
+body {
+    background-color: rgb(231, 231, 231);
+    background-size: cover;
+    height: calc(100vh - 164px);
+    font-family: 'Tenali Ramakrishna';
+}
+
+input::placeholder {
+    transform: translateY(8px);
+    font-size: 30px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
