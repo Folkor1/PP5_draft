@@ -10,8 +10,8 @@ body {
 }
 
 input::placeholder {
-    transform: translateY(8px);
-    font-size: 30px;
+    transform: translateY(5px);
+    font-size: 25px;
 }
 
 /* from Bulma */
