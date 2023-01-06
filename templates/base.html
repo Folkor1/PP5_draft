@@ -37,10 +37,10 @@
     <body>
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-lg-4 my-auto">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link"><img class='img-fluid' src="/media/logo7.jpg" alt ='Logo Pic' id="navbar-logo"></a>
                 </div>
-                <div class="col-12 col-lg-3 my-auto">
+                <div class="col-12 col-lg-5 my-auto mt-3">
                     <form method="GET" action="">
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-start" type="text" name="q" placeholder="Search our site">
@@ -53,8 +53,17 @@
                             </div>
                         </div>
                     </form>
+                    <div class="row bg-white mt-2 h3">
+                        <nav class="navbar navbar-expand-lg navbar-light w-100 bg-black">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            {% include 'includes/mobile-top-header.html' %}
+                            {% include 'includes/main-nav.html' %}
+                        </nav>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-4 my-auto h4">
+                <div class="col-12 col-lg-3 my-auto h4">
                     <div class="dropdown text-lg-end me-5">
                         <button class="btn btn-secondary bg-black border-0 me-4 align-baseline" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <p class="h4 mb-0">My Account</p> 
@@ -86,6 +95,15 @@
                         </li>
                     </div>
                 </div>
+            </div>
+            <div class="row bg-white h4">
+                <nav class="navbar d-lg-none navbar-light w-100">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
+                </nav>
             </div>
         </header>
 
