@@ -14,6 +14,34 @@ input::placeholder {
     font-size: 25px;
 }
 
+footer {
+    position: fixed;
+    height: 120px;
+    bottom: 0;
+    width: 100%;
+}
+
+.explore-button {
+    border: 1px solid silver;
+    background: #A77509;
+    color: black;
+    width: 180px;
+    height: 60px;
+    font-size: 25px;
+}
+
+.explore-button:hover {
+    background: brown;
+}
+
+.gold-color {
+    color: #A77509;
+}
+
+.bronze-color {
+    color: brown;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

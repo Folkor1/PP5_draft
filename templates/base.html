@@ -54,8 +54,8 @@
                         </div>
                     </form>
                     <div class="row bg-white mt-2 h3">
-                        <nav class="navbar navbar-expand-lg navbar-light w-100 bg-black">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <nav class="navbar navbar-expand-lg navbar-light w-100 bg-black p-0">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             {% include 'includes/mobile-top-header.html' %}
@@ -74,7 +74,7 @@
                                     <li><a class="dropdown-item h5" href="#">Product Management</a></li>
                                 {% endif %}
                                 <li><a class="dropdown-item h5" href="#">My Profile</a></li>
-                                <li><a class="dropdown-item h5" href="#">Logout</a></li>
+                                <li><a class="dropdown-item h5" href="{% url 'account_logout' %}">Logout</a></li>
                             {% else %}
                                 <li><a class="dropdown-item h5" href="#">Register</a></li>
                                 <li><a class="dropdown-item h5" href="#">Login</a></li>
@@ -96,9 +96,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row bg-white h4">
-                <nav class="navbar d-lg-none navbar-light w-100">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="row bg-black d-lg-none h4 p-4">
+                <nav class="navbar navbar-light w-100">
+                    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     {% include 'includes/mobile-top-header.html' %}
@@ -119,6 +119,19 @@
 
         {% block postloadjs %}
         {% endblock %}
+
+        <footer class="footer text-center text-white" style="background-color: #000000;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com" target="_blank" role="button"
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+                </section>
+            </div>
+          </footer>
         
     </body>
     </html>
