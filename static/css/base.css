@@ -16,6 +16,13 @@ input::placeholder {
     font-size: 25px;
 }
 
+.footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
 .explore-button {
     border: 1px solid silver;
     background: #A77509;
