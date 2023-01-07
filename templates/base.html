@@ -35,11 +35,13 @@
         <title>Golden Coin {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
+        <!-- Navigation -->
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
                 <div class="col-12 col-lg-4 my-auto">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link"><img class='img-fluid' src="/media/logo7.jpg" alt ='Logo Pic' id="navbar-logo"></a>
                 </div>
+                <!-- Search bar -->
                 <div class="col-12 col-lg-5 my-auto mt-3">
                     <form method="GET" action="">
                         <div class="input-group w-100">
@@ -53,6 +55,7 @@
                             </div>
                         </div>
                     </form>
+                    <!-- Nav links -->
                     <div class="row bg-white mt-2 h3">
                         <nav class="navbar navbar-expand-lg navbar-light w-100 bg-black p-0">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,6 +66,7 @@
                         </nav>
                     </div>
                 </div>
+                <!-- My account -->
                 <div class="col-12 col-lg-3 my-auto h4">
                     <div class="dropdown text-lg-end me-5">
                         <button class="btn btn-secondary bg-black border-0 me-4 align-baseline" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -96,6 +100,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Navigation for mobile -->
             <div class="row bg-black d-lg-none h4 p-4">
                 <nav class="navbar navbar-light w-100">
                     <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,18 +125,15 @@
         {% block postloadjs %}
         {% endblock %}
 
+        <!-- Footer -->
         <footer class="footer text-center text-white" style="background-color: #000000;">
-            <!-- Grid container -->
             <div class="container p-4 pb-0">
-                <!-- Section: Social media -->
                 <section class="mb-4">
-                    <!-- Facebook -->
                     <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com" target="_blank" role="button"
                     ><i class="fab fa-facebook-f"></i
                     ></a>
                 </section>
             </div>
           </footer>
-        
     </body>
     </html>

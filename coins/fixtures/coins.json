@@ -1,0 +1,767 @@
+﻿[
+  {
+    "pk": 1,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "FD79D24DC1E438EC",
+      "name": "Vladimir's zlatnik",
+      "description": "We do not know what the original zlatnik coins were officially called during the grand prince's reign, however, because historical accounts do not mention them by name. In fact, the word zlatnik comes from an agreement between Prince Igor and Byzantium in 945. To this day, 11 such coins have been found. It is largely thought that not very many zlatniks were ever minted, and they were only in production for a short period of time.",
+      "metal": 1,
+      "price": 5800,
+      "origin": "Byzantine",
+      "year": "945",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106172/byzantine-gold-ancient_ir9vcq.jpg",
+      "image": "byzantine-gold-ancient.JPG"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "644D93CAAED43B5E",
+      "name": "Louis d'Or",
+      "description": "The name derives from the depiction of the portrait of King Louis on one side of the coin; the French royal coat of arms is on the reverse. The coin was replaced by the French franc at the time of the revolution and later the similarly valued Napoleon. The actual value of the coins fluctuated according to monetary and fiscal policy (see livre tournois), but in 1726 the value was stabilized.",
+      "metal": 1,
+      "price": 1800,
+      "origin": "France",
+      "year": "1643",
+      "condition": "fine",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/france-gold-ancient1_djeioe.jpg",
+      "image": "france-gold-ancient1.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "D6CD5C859D5BD3CB",
+      "name": "Chinese Gold Panda",
+      "description": "Issued by the People's Republic of China. The Official Mint of the People's Republic of China introduced the panda gold bullion coins in 1982. The panda design changes every year (with a single exception) and the Gold Panda coins come in different sizes and denominations.",
+      "metal": 1,
+      "price": 780,
+      "origin": "China",
+      "year": "1986",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/china-gold-modern_n49lbj.jpg",
+      "image": "china-gold-modern.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "78C2E7E8777F946D",
+      "name": "Franc a cheval",
+      "description": "The gold franc worth one livre tournois was introduced in 1360 to pay the ransom of King John II of France. This coin secured the king's freedom and showed him on a richly decorated horse earning it the name franc a cheval (meaning 'free on horse' in French).",
+      "metal": 1,
+      "price": 5780,
+      "origin": "France",
+      "year": "1380",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/france-gold-ancient_hgdyea.jpg",
+      "image": "france-gold-ancient.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "B25898BB5277AB14",
+      "name": "Philip II, stater",
+      "description": "From the Kingdom of Macedon this Gold Stater was stuck during the reign of Philip II. On the obverse is the head of Apollo and on the reverse is a charioteer with galloping horses with a thunderbolt beneath them.",
+      "metal": 1,
+      "price": 9850,
+      "origin": "Greece",
+      "year": "340 B.C.",
+      "condition": "fine",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/greece-gold-ancient2_valrs5.jpg",
+      "image": "greece-gold-ancient2.JPG"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "4BEC73AA742D5D79",
+      "name": "Aureus of Antoninus Pius",
+      "description": "Laureate head of Antoninus Pius, right. Jupiter seated left, holding thunderbolt & sceptre. (reverse)",
+      "metal": 1,
+      "price": 7740,
+      "origin": "Rome",
+      "year": "138",
+      "condition": "good",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/greece-gold-ancient1_xstuuz.jpg",
+      "image": "greece-gold-ancient1.JPG"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "F6B888345C19DE42",
+      "name": "Krugerrand",
+      "description": "Krugerrands are the most popular gold bullion coin in the world and offer a great value way to invest in gold. Krugerrands are 22 carat gold, but weigh more than a troy ounce and therefore contain exactly 1 troy ounce of fine (24 carat) gold.",
+      "metal": 1,
+      "price": 1370,
+      "origin": "South Africa",
+      "year": "1984",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/SA-gold-modern_wqodkk.jpg",
+      "image": "SA-gold-modern.JPG"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "3DBA1A3E598E7BBB",
+      "name": "Natura",
+      "description": "Half ounce 24 carat gold South African Natura coin. This piece is part of a series celebrating the rich wildlife of South Africa. They were also available in 1oz, 1/4oz and 1/10oz denominations.",
+      "metal": 1,
+      "price": 1210,
+      "origin": "South Africa",
+      "year": "1994",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/SA-gold-modern1_f2ptkp.jpg",
+      "image": "SA-gold-modern1.jpg"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "EDB318B5A29139AC",
+      "name": "100 Kurus",
+      "description": "Obverse: Head of Ataturk left. Reverse: Legend and date within wreath",
+      "metal": 1,
+      "price": 999,
+      "origin": "Turkey",
+      "year": "1923",
+      "condition": "fine",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/turkey-gold-mid1_m6hlpz.jpg",
+      "image": "turkey-gold-mid1.jpg"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "E233FE697CED5E58",
+      "name": "Two Dollars",
+      "description": "The New Zealand two-dollar coin is the largest-denomination coin of the New Zealand Dollar. It was introduced along with the one-dollar coin in 1990, replacing an earlier banknote. It is the largest and heaviest coin in circulation.",
+      "metal": 1,
+      "price": 3600,
+      "origin": "New Zealand",
+      "year": "1990",
+      "condition": "good",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/NZ-gold-modern_dlqdrs.jpg",
+      "image": "NZ-gold-modern.jpg"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "1F4C7ECA522CF676",
+      "name": "Spain 1/2 Escudo",
+      "description": "This Spanish gold 1/2 escudo coin was minted in Madrid, Spain during the reign of Ferdinand VI. The obverse side features the bust of King Ferdinand VI with the date below and the reverse shows his crowned coat of arms. Ferdinand VI, of the Bourbon Dynasty, was King of Spain from 1746 until his death in 1759.",
+      "metal": 1,
+      "price": 1490,
+      "origin": "Spain",
+      "year": "1757",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106173/spain-gold-mid_xpzrxv.jpg",
+      "image": "spain-gold-mid.JPG"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "1CC721B2546336D6",
+      "name": "25 Kurus",
+      "description": "The Ziynet is the decorative version of the turkish gold bullion coinage and is referred to as primarily an 'adornment' or 'ornamented' coin. Many are retailed with a brass hook, soldered onto the rim, so they can be worn.",
+      "metal": 1,
+      "price": 880,
+      "origin": "Turkey",
+      "year": "1970",
+      "condition": "fine",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106174/turkey-gold-mid2_mjdgsu.jpg",
+      "image": "turkey-gold-mid2.jpg"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "7CC54E335C5C2979",
+      "name": "Chervonets",
+      "description": "Originally, this gold coin was identical to the gold ducat of 3.5 grams, 98.6 persent of fine gold. The first known chervonets of Russian coinage was the Ugric gold; it was created in the 15th century under Ivan III. Sometimes, chervonets were considered any large gold coin, including imperial and semi-imperial coins.",
+      "metal": 1,
+      "price": 1380,
+      "origin": "Russia",
+      "year": "1976",
+      "condition": "fine",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106174/russia-gold-modern_voj942.jpg",
+      "image": "russia-gold-modern.jpg"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "9A25857F361D1AF4",
+      "name": "Liberty Head",
+      "description": "The 1843 Liberty Head Gold Coin was designed by Christian Gobrecht and minted in Philadelphia, Charlotte (C), Dahlonega (D), and New Orleans (O) mints. The 1843 Liberty Head Gold Coins are popular collectibles among numismatists who enjoy classic 19th-century coinage.",
+      "metal": 1,
+      "price": 895,
+      "origin": "USA",
+      "year": "1843",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106174/usa-gold-mid1_mqpxr5.jpg",
+      "image": "usa-gold-mid1.jpg"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "FEE4DC428A85E429",
+      "name": "Liberty Gold Dollar",
+      "description": "The gold dollar or gold one-dollar piece is a gold coin that was struck as a regular issue by the United States Bureau of the Mint from 1849 to 1889.",
+      "metal": 1,
+      "price": 690,
+      "origin": "USA",
+      "year": "1849",
+      "condition": "fine",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673113133/usa-gold-mid2_twqdty.jpg",
+      "image": "usa-gold-mid2.jpg"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "6B3EBB72EA8539D5",
+      "name": "Kangaroo",
+      "description": "In 2015 the Perth Mint, in Australia, stopped production of the 1oz silver bullion crocodile coin and instead replaced it with a new 2016 bullion coin - the kangaroo. These are investment products.",
+      "metal": 2,
+      "price": 50,
+      "origin": "Australia",
+      "year": "2016",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106186/aus-silver-modern2_dwi9uf.jpg",
+      "image": "aus-silver-modern1.jpg"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "D1945DFA81C27BB3",
+      "name": "3 Mark - Ludwig III",
+      "description": "Due to the scarce conditions on the silver market caused by the war, only around 130 of this commemorative coin to commemorate the golden wedding anniversary of the Bavarian royal couple were minted. It is one of the most coveted German coins of the 20th century.",
+      "metal": 2,
+      "price": 25000,
+      "origin": "Germany",
+      "year": "1918",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106186/german-silver-mid1_ificrg.jpg",
+      "image": "german-silver-mid1.jpg"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "C1EED7E5D8897286",
+      "name": "Half-shekel",
+      "description": "A rare, half-shekel coin from the Great Revolt from 66 CE to 70 CE during the Second Temple period has been discovered in Jerusalem’s Ophel excavations south of the Temple Mount.",
+      "metal": 2,
+      "price": 90000,
+      "origin": "Israel",
+      "year": "66 - 70",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106186/israel-silver-ancient1_n2qmdn.jpg",
+      "image": "israel-silver-ancient1.JPG"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "4CD98B515E5983CE",
+      "name": "1 Thaler",
+      "description": "This type was struck to commemorate the centenary of the death of Emperor Charles V, which occurred on September 21, 1558.",
+      "metal": 2,
+      "price": 50,
+      "origin": "France",
+      "year": "1664",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106186/france-silver-ancient_hde5bp.jpg",
+      "image": "france-silver-ancient.jpg"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "932C224BAB9218CB",
+      "name": "Australian Kangaroo",
+      "description": "A 2020 One Ounce Silver Kangaroo from Perth Mint. The Perth Mint are known for producing beautiful bullion coins and this is no exception. The coin features a red Kangaroo - the same as the Gold Nugget - and contains the Perth Mint mark of 'P' on the reverse.",
+      "metal": 2,
+      "price": 40,
+      "origin": "Australia",
+      "year": "2020",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106186/aus-silver-modern1_k5nrrm.jpg",
+      "image": "aus-silver-modern1.jpg"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "D7329DD42E7F773E",
+      "name": "1 Poltinnik",
+      "description": "Obverse: the Blacksmith depicts a hammer above the anvil, below the year of minting the coin. Reverse: the coat of arms of the Soviet Union is depicted - Hammer with a sickle, the words Workers from all over the world, single!), as well as the name of the country 'CC CP' and the denomination of the coin 1 Poltinnik.",
+      "metal": 2,
+      "price": 25,
+      "origin": "Russia",
+      "year": "1924",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/russia-silver-mid1_gx5gpb.jpg",
+      "image": "russia-silver-mid1.jpg"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "C5FF9134FFFB274B",
+      "name": "2 Lati",
+      "description": "Latvian coat of arms with 'Latvijas' text above and 'Republika' text below: Three golden stars above escutcheon of a rising golden sun over red lion of Courland and silver griffin of Livonia. Bottom decorated with oak branches. Escutcheon surrounded by lion and griffin.",
+      "metal": 2,
+      "price": 75,
+      "origin": "Latvia",
+      "year": "1925",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/latvia-silver-mid1_ajmphg.jpg",
+      "image": "latvia-silver-mid1.jpg"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "B95F8E987ACEFCC5",
+      "name": "5 Lati",
+      "description": "Obverse: Maiden's head facing right in stylized folk costume, including headdress, with ears of grain over her shoulder. Reverse: Latvian coat of arms with supporters above denomination and date.",
+      "metal": 2,
+      "price": 95,
+      "origin": "Latvia",
+      "year": "1932",
+      "condition": "fair",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/latvia-silver-mid2_l81wa9.jpg",
+      "image": "latvia-silver-mid2.jpg"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "CAA2FF2736A5E891",
+      "name": "Grivennik - Pyotr I",
+      "description": "Obverse: Two-headed eagle with a crown above. Reverse: Denomination; date.",
+      "metal": 2,
+      "price": 345,
+      "origin": "Russia",
+      "year": "1701",
+      "condition": "fair",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/russia-silver-ancient1_glpvyt.jpg",
+      "image": "russia-silver-ancient1.jpg"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "B98CB46952864B11",
+      "name": "Mexican Libertad Coin",
+      "description": "Both sides of this 2011 1oz Silver Mexican Libertad coin feature a lot of detail. This beautiful Silver one-ounce coin features The Angel of Independence on one side, and The Coat of Arms of Mexico, surrounded by previous historical Mexican Coats of Arms on the other.",
+      "metal": 2,
+      "price": 60,
+      "origin": "Mexico",
+      "year": "2011",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/mexico-silver-modern1_jvi2ep.jpg",
+      "image": "mexico-silver-modern1.jpg"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "EFED18E9BFE24D73",
+      "name": "Ort",
+      "description": "Sigismund III Vasa (1587-1632) - city of Gdansk.",
+      "metal": 2,
+      "price": 110,
+      "origin": "Poland",
+      "year": "1616",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106186/german-silver-ancient1_oneui2.jpg",
+      "image": "german-silver-ancient1.jpg"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "B2AFFC3BEC28C8D1",
+      "name": "Grivennik - Pyotr I 1720",
+      "description": "Grivennik (or ten kopecks) of 1720 issued by the Kadashevsky Mint. As the metal from which the coins were made, 729 silver was used.",
+      "metal": 2,
+      "price": 226,
+      "origin": "Russia",
+      "year": "1720",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/russia-silver-ancient2_lqvqa6.jpg",
+      "image": "russia-silver-ancient2.jpg"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "72E3B7EF6CF1795D",
+      "name": "1 Ruble",
+      "description": "Obverse: National arms divides circle holding inscription. Reverse: Two figures walking right, radiant sun rising at right.",
+      "metal": 2,
+      "price": 70,
+      "origin": "Russia",
+      "year": "1924",
+      "condition": "fine",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/russia-silver-mid2_obujpv.jpg",
+      "image": "russia-silver-mid2.jpg"
+    }
+  },
+  {
+    "pk": 29,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "9B9C1365CF2B3C31",
+      "name": "1 Riyal",
+      "description": "Obverse: Inscription within beaded circle, legend above, crossed swords below within design flanked by palm trees. Reverse: Inscription within beaded circle, legend above, value below within design flanked by palm trees.",
+      "metal": 2,
+      "price": 100,
+      "origin": "Saudi Arabia",
+      "year": "1955",
+      "condition": "good",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/saudi-silver-modern_v02jch.jpg",
+      "image": "saudi-silver-modern.jpg"
+    }
+  },
+  {
+    "pk": 30,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "4978947CBE69A39D",
+      "name": "American Eagle",
+      "description": "The One Ounce Silver Eagle is the official Bullion coin of the United States and has a face value of 1 dollar. Silver Eagle coins were first released in 1986 and are now produced at one of the US Mint’s two plants in either San Francisco or West Point, New York.",
+      "metal": 2,
+      "price": 65,
+      "origin": "USA",
+      "year": "2012",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106187/usa-silver-modern1_g2wsu6.jpg",
+      "image": "usa-silver-modern1.jpg"
+    }
+  },
+  {
+    "pk": 31,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "87B442293CC58DCC",
+      "name": "Justinian I",
+      "description": "Large bronze follis, Constantinople mint, 2nd officina. His helmeted, cuirassed bust facing, holding globus cruciger, cross over shoulder.",
+      "metal": 3,
+      "price": 165,
+      "origin": "Byzantium",
+      "year": "527 - 565",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/byzantine-bronze-ancient_ridgga.jpg",
+      "image": "byzantine-bronze-ancient.jpg"
+    }
+  },
+  {
+    "pk": 32,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "26CEFCB67DA4E2CA",
+      "name": "Samanid Dirham",
+      "description": "Samanid coinage was standardized in gold, silver, and bronze based on the Abbasid model, helping to facilitate international trade well beyond Samanid lands. Through trade along the famed Silk Road from Xian in China all the way into Europe, Samanid coins, especially silver dirhams, have been found in large quantities as far afield as Scandinavia in hoards of Viking silver and gold.",
+      "metal": 3,
+      "price": 80,
+      "origin": "Samanid Empire",
+      "year": "892",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/iran-bronze-ancient_wts9y5.jpg",
+      "image": "iran-bronze-ancient.JPG"
+    }
+  },
+  {
+    "pk": 33,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "EE9AE2C4F96D845C",
+      "name": "Kuan Ei Tsu Ho",
+      "description": "Four Japanese symbols - Kuan Ei Tsu Ho. 'Kwan Ei Tsu Ho' means 'Universal Treasure of Kwan Ei', 'Kwai Ei' being the era of 'Permanent Libarality' that began in 1624 and lasted for 20 years.",
+      "metal": 3,
+      "price": 15,
+      "origin": "Japan",
+      "year": "1626",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/japan-bronze-ancient_hgqvy2.jpg",
+      "image": "japan-bronze-ancient.JPG"
+    }
+  },
+  {
+    "pk": 34,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "CC929186A48436C6",
+      "name": "1 Netherlands Cent",
+      "description": "Obverse: Crowned rampant lion left on a field of 15 small shields all within beaded circle, date below. Reverse: Value within wreath.",
+      "metal": 3,
+      "price": 10,
+      "origin": "Netherlands",
+      "year": "1896",
+      "condition": "fair",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/netherlands-bronze-mid_adbwxe.jpg",
+      "image": "netherlands-bronze-mid.JPG"
+    }
+  },
+  {
+    "pk": 35,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "C2D2D45B1C496A64",
+      "name": "Australian Five Dollars",
+      "description": "2000 Sydney Olympics Five Dollar Series.",
+      "metal": 3,
+      "price": 11,
+      "origin": "Australia",
+      "year": "2000",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/aus-bronze-modern_oni31p.jpg",
+      "image": "aus-bronze-modern.JPG"
+    }
+  },
+  {
+    "pk": 36,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "6CA5AA4D614A1A28",
+      "name": "Billon Antoninianus",
+      "description": "Rome mint, struck 256-257 AD. Emperor standing left holding spear and raising a kneeling figure.",
+      "metal": 3,
+      "price": 50,
+      "origin": "Roman Empire",
+      "year": "256",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/rome-bronze-ancient2_x2drr5.jpg",
+      "image": "rome-bronze-ancient2.jpg"
+    }
+  },
+  {
+    "pk": 37,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "87491DC3F39552F6",
+      "name": "New Zealand penny",
+      "description": "Obverse: Laureate bust of Queen Elizabeth II facing right. Reverse: A tui (bird) perched facing left in a setting of yellow kowhai blossoms.",
+      "metal": 3,
+      "price": 20,
+      "origin": "New Zealand",
+      "year": "1955",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/NZ-bronze-mid_yt46en.jpg",
+      "image": "NZ-bronze-mid.JPG"
+    }
+  },
+  {
+    "pk": 38,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "925FC9E31E5144E4",
+      "name": "Valentinian II",
+      "description": "This is a genuine ancient Roman bronze coin struck during the reign of Valentinian II.",
+      "metal": 3,
+      "price": 28,
+      "origin": "Roman Empire",
+      "year": "375",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/rome-bronze-ancient1_w0jfmf.jpg",
+      "image": "rome-bronze-ancient1.jpg"
+    }
+  },
+  {
+    "pk": 39,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "5B1848B92FB59ADA",
+      "name": "1 Escudo",
+      "description": "Obverse: Arms within a crowned globe, date below. Reverse: Value in the centre, legend surrounding.",
+      "metal": 3,
+      "price": 5,
+      "origin": "Portugal Mozambique",
+      "year": "1957",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/mozambique-bronze-mid_qbwcrq.jpg",
+      "image": "mozambique-bronze-mid.JPG"
+    }
+  },
+  {
+    "pk": 40,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "A62E64DBC4D6C4C4",
+      "name": "Ae As - Agrippa",
+      "description": "Agrippa AE As Roman Imperial Coin. Struck under Caligula, 37-41 AD.",
+      "metal": 3,
+      "price": 20,
+      "origin": "Roman Empire",
+      "year": "37",
+      "condition": "fair",
+      "era": "ancient",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106198/rome-bronze-ancient_sehnlf.jpg",
+      "image": "rome-bronze-ancient.JPG"
+    }
+  },
+  {
+    "pk": 41,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "471921BDE2C17FB1",
+      "name": "Sweden 2 ore",
+      "description": "Obverse: Crowned double monogram of King Gustaf V of Sweden divides date. King's motto around rim. Reverse: The Three crowns of Sweden divides value in letters at base of lower crown. Above the crowns there is the value in number and below the mintmark of Stockholm mint.",
+      "metal": 3,
+      "price": 50,
+      "origin": "Sweden",
+      "year": "1921",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/sweden-bronze-mid_rfqbdw.jpg",
+      "image": "sweden-bronze-mid.JPG"
+    }
+  },
+  {
+    "pk": 42,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "9FA1BA8E618C8FEF",
+      "name": "USSR 5 Kopeks",
+      "description": "Obverse: The coat of arms of the Soviet Union. Reverse: Value and date within wheat sprigs.",
+      "metal": 3,
+      "price": 15,
+      "origin": "USSR",
+      "year": "1935",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/russia-bronze-mid1_tjb4mr.jpg",
+      "image": "russia-bronze-mid1.jpg"
+    }
+  },
+  {
+    "pk": 43,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "E7F1238453E4B8B6",
+      "name": "Ceres Avgvsta",
+      "description": "Ceres seated to left on ornamental throne, holding corn-ears and long torch.",
+      "metal": 3,
+      "price": 147,
+      "origin": "Roman Empire",
+      "year": "1935",
+      "condition": "good",
+      "era": "medium",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/rome-bronze-ancient3_qq7zkd.jpg",
+      "image": "rome-bronze-ancient3.JPG"
+    }
+  },
+  {
+    "pk": 44,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "4DEE7D95DD4D31F2",
+      "name": "1 Kurus",
+      "description": "The Turkish State Mint issued Turkish Lira coins in 6 different denominations, including this 1 Kurus coin Turkey. They are part of the Turkish Lira coins series. The Turkish State Mint started issuing these 0.01 Turkish Lira coins in 2009.",
+      "metal": 3,
+      "price": 7,
+      "origin": "Turkey",
+      "year": "2015",
+      "condition": "uncirculated",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/turkey-bronze-modern_yigbz5.jpg",
+      "image": "turkey-bronze-modern.JPG"
+    }
+  },
+  {
+    "pk": 45,
+    "model": "coins.coins",
+    "fields": {
+      "sku": "F9CBC9A54C7E75EB",
+      "name": "1 Hryvnia",
+      "description": "Obverse: Ukrainian trident emblem over large numerical denomination inside the decorative wreath and the logo of the National Bank of Ukraine at the top. Reverse: Half-length figure of Vladimir the Great facing, holding model church and staff with legend above.",
+      "metal": 3,
+      "price": 5,
+      "origin": "Ukraine",
+      "year": "2006",
+      "condition": "good",
+      "era": "modern",
+      "image_url": "https://res.cloudinary.com/dgyhmn7vf/image/upload/v1673106199/ukraine-bronze-modern_j6rnej.jpg",
+      "image": "ukraine-bronze-modern.JPG"
+    }
+  }
+]

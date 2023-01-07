@@ -3,8 +3,10 @@ html {
 }
 
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background-color: rgb(231, 231, 231);
-    background-size: cover;
     height: calc(100vh - 164px);
     font-family: 'Tenali Ramakrishna';
 }
@@ -12,13 +14,6 @@ body {
 input::placeholder {
     transform: translateY(5px);
     font-size: 25px;
-}
-
-footer {
-    position: fixed;
-    height: 120px;
-    bottom: 0;
-    width: 100%;
 }
 
 .explore-button {
