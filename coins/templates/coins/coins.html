@@ -11,7 +11,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid" id="offset">
+    <div class="container-fluid offset">
         <div class="row">
             <div class="col text-center">
                 <h1 class="text-uppercase">Coins</h1>
@@ -26,28 +26,29 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if coin.image %}
-                                <a href="">
+                                <a href="{% url 'coins_detail' coin.id %}">
                                     <img class="card-img-top img-fluid" src="{{ coin.image.url }}" alt="{{ coin.name }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'coins_detail' coin.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ coin.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0 h2">{{ coin.name }}</p>
+                                    <p class="mb-0 h2 text-center">{{ coin.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold"><span class="fw-bold">Origin:</span> {{ coin.origin }}</p>
-                                            <p class="lead mb-0 text-left font-weight-bold"><span class="fw-bold">Year:</span> {{ coin.year }}</p>
-                                            <p class="lead mb-0 text-left font-weight-bold text-capitalize"><span class="fw-bold">Condition:</span> {{ coin.condition }}</p>
+                                            <p class="lead mb-0 text-capitalize"><span class="fw-bold">Metal:</span> {{ coin.metal }}</p>
+                                            <p class="lead mb-0 text-capitalize"><span class="fw-bold">Condition:</span> {{ coin.condition }}</p>
+                                            <p class="lead mb-0"><span class="fw-bold">Origin:</span> {{ coin.origin }}</p>
+                                            <p class="lead mb-0"><span class="fw-bold">Year:</span> {{ coin.year }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="h3 mb-0 text-left font-weight-bold">${{ coin.price }}</p>
+                                            <p class="h3 mb-0 text-left font-weight-bold text-center">${{ coin.price }}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -16,12 +16,9 @@ input::placeholder {
     font-size: 25px;
 }
 
-.footer {
-    position: static;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-}
+main {
+    flex: 1 0 auto;
+  }
 
 .explore-button {
     border: 1px solid silver;
@@ -54,7 +51,7 @@ input::placeholder {
 	z-index: -1;
 }
 
-#offset {
+.offset {
     margin-top: 180px;
 }
 
