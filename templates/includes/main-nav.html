@@ -22,11 +22,11 @@
                 Golden
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="golden-link">
-                <a href="" class="dropdown-item h5">Ancient</a>
-                <a href="" class="dropdown-item h5">Medium</a>
-                <a href="" class="dropdown-item h5">Modern</a>
-                <a href="" class="dropdown-item h5">Uncirculated</a>
-                <a href="" class="dropdown-item h5">All Coins</a>
+                <a href="{% url 'coins' %}?era=ancient&metal=gold" class="dropdown-item h5">Ancient</a>
+                <a href="{% url 'coins' %}?era=medium&metal=gold" class="dropdown-item h5">Medium</a>
+                <a href="{% url 'coins' %}?era=modern&metal=gold" class="dropdown-item h5">Modern</a>
+                <a href="{% url 'coins' %}?condition=uncirculated&metal=gold" class="dropdown-item h5">Uncirculated</a>
+                <a href="{% url 'coins' %}?metal=gold" class="dropdown-item h5">All Coins</a>
             </div>
         </li>
 
@@ -35,11 +35,11 @@
                 Silver
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="silver-link">
-                <a href="" class="dropdown-item h5">Ancient</a>
-                <a href="" class="dropdown-item h5">Medium</a>
-                <a href="" class="dropdown-item h5">Modern</a>
-                <a href="" class="dropdown-item h5">Uncirculated</a>
-                <a href="" class="dropdown-item h5">All Coins</a>
+                <a href="{% url 'coins' %}?era=ancient&metal=silver" class="dropdown-item h5">Ancient</a>
+                <a href="{% url 'coins' %}?era=medium&metal=silver" class="dropdown-item h5">Medium</a>
+                <a href="{% url 'coins' %}?era=modern&metal=silver" class="dropdown-item h5">Modern</a>
+                <a href="{% url 'coins' %}?condition=uncirculated&metal=silver" class="dropdown-item h5">Uncirculated</a>
+                <a href="{% url 'coins' %}?metal=silver" class="dropdown-item h5">All Coins</a>
             </div>
         </li>
 
@@ -48,11 +48,11 @@
                 Bronze
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="bronze-link">
-                <a href="" class="dropdown-item h5">Ancient</a>
-                <a href="" class="dropdown-item h5">Medium</a>
-                <a href="" class="dropdown-item h5">Modern</a>
-                <a href="" class="dropdown-item h5">Uncirculated</a>
-                <a href="" class="dropdown-item h5">All Coins</a>
+                <a href="{% url 'coins' %}?era=ancient&metal=bronze" class="dropdown-item h5">Ancient</a>
+                <a href="{% url 'coins' %}?era=medium&metal=bronze" class="dropdown-item h5">Medium</a>
+                <a href="{% url 'coins' %}?era=modern&metal=bronze" class="dropdown-item h5">Modern</a>
+                <a href="{% url 'coins' %}?condition=uncirculated&metal=bronze" class="dropdown-item h5">Uncirculated</a>
+                <a href="{% url 'coins' %}?metal=bronze" class="dropdown-item h5">All Coins</a>
             </div>
         </li>
     </ul>
