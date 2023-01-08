@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse mt-3" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold text-black nav-link" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
@@ -10,48 +10,45 @@
                 All Coins
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-coins-link">
-                <a href="" class="dropdown-item h5">By Price</a>
-                <a href="" class="dropdown-item h5">By Origin</a>
-                <a href="" class="dropdown-item h5">By Year</a>
+                <a href="{% url 'coins' %}?sort=price&direction=desc" class="dropdown-item h5">By Price</a>
+                <a href="{% url 'coins' %}?sort=origin" class="dropdown-item h5">By Origin</a>
+                <a href="{% url 'coins' %}?sort=condition&direction=desc" class="dropdown-item h5">By Condition</a>
                 <a href="{% url 'coins' %}" class="dropdown-item h5">All Coins</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black text-white me-5" href="#" id="golden-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white me-5" href="#" id="golden-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Golden
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="golden-link">
                 <a href="{% url 'coins' %}?era=ancient&metal=gold" class="dropdown-item h5">Ancient</a>
                 <a href="{% url 'coins' %}?era=medium&metal=gold" class="dropdown-item h5">Medium</a>
                 <a href="{% url 'coins' %}?era=modern&metal=gold" class="dropdown-item h5">Modern</a>
-                <a href="{% url 'coins' %}?condition=uncirculated&metal=gold" class="dropdown-item h5">Uncirculated</a>
                 <a href="{% url 'coins' %}?metal=gold" class="dropdown-item h5">All Coins</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black text-white me-5" href="#" id="silver-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white me-5" href="#" id="silver-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Silver
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="silver-link">
                 <a href="{% url 'coins' %}?era=ancient&metal=silver" class="dropdown-item h5">Ancient</a>
                 <a href="{% url 'coins' %}?era=medium&metal=silver" class="dropdown-item h5">Medium</a>
                 <a href="{% url 'coins' %}?era=modern&metal=silver" class="dropdown-item h5">Modern</a>
-                <a href="{% url 'coins' %}?condition=uncirculated&metal=silver" class="dropdown-item h5">Uncirculated</a>
                 <a href="{% url 'coins' %}?metal=silver" class="dropdown-item h5">All Coins</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black text-white me-5" href="#" id="bronze-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white me-5" href="#" id="bronze-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Bronze
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="bronze-link">
                 <a href="{% url 'coins' %}?era=ancient&metal=bronze" class="dropdown-item h5">Ancient</a>
                 <a href="{% url 'coins' %}?era=medium&metal=bronze" class="dropdown-item h5">Medium</a>
                 <a href="{% url 'coins' %}?era=modern&metal=bronze" class="dropdown-item h5">Modern</a>
-                <a href="{% url 'coins' %}?condition=uncirculated&metal=bronze" class="dropdown-item h5">Uncirculated</a>
                 <a href="{% url 'coins' %}?metal=bronze" class="dropdown-item h5">All Coins</a>
             </div>
         </li>

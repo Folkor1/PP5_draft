@@ -10,6 +10,10 @@ def all_coins(request):
     """
     coins = Coins.objects.all()
     query = None
+    eras = None
+    metals = None
+    sort = None
+    direction = None
 
     if request.GET:
         if 'q' in request.GET:
@@ -32,19 +36,32 @@ def all_coins(request):
         coins = coins.filter(era__in=eras)
         eras = Coins.objects.filter(name__in=eras)
 
-    if 'condition' in request.GET:
-        conditions = request.GET['condition'].split(',')
-        coins = coins.filter(condition__in=conditions)
-        conditions = Coins.objects.filter(name__in=conditions)
-
     if 'metal' in request.GET:
         metals = request.GET['metal'].split(',')
         coins = coins.filter(metal__name__in=metals)
         metals = Metal.objects.filter(name__in=metals)
 
+    if 'sort' in request.GET:
+        sortkey = request.GET['sort']
+        sort = sortkey
+        if sortkey == 'name':
+            sortkey = 'lower_name'
+            coins = coins.annotate(lower_name=Lower('name'))
+        if sortkey == 'metal':
+            sortkey = 'metal__name'
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+        coins = coins.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'coins': coins,
         'search_term': query,
+        'current_metals': metals,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'coins/coins.html', context)

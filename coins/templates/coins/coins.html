@@ -7,12 +7,39 @@
         <div class="row">
             <div class="col text-center">
                 <h1 class="text-uppercase">Coins</h1>
+                {% for c in current_metals %}
+                    <a class="category-badge text-decoration-none h4" href="{% url 'coins' %}?metal={{ c.name }}">
+                        <span class="p-2 mb-3 badge bg-light text-black rounded-1 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr class="w-50 m-auto mb-3">
             </div>
         </div>
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
+                <div class="row justify-content-end me-3">
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end mb-1">
+                        <div class="sort-select-wrapper w-25">
+                            <select id="sort-selector" class="h5 custom-select custom-select-sm rounded-1 border-black">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="origin_asc" {% if current_sorting == 'origin_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="origin_desc" {% if current_sorting == 'origin_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="era_asc" {% if current_sorting == 'era_asc' %}selected{% endif %}>Era (Ancient-Modern)</option>
+                                <option value="era_desc" {% if current_sorting == 'era_desc' %}selected{% endif %}>Era (Modern-Ancient)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted h4 mt-3 text-center text-md-start">
+                            {% if search_term or current_metals or current_sorting != 'None_None' %}
+                                <span><a class="text-decoration-none" href="{% url 'coins' %}">Coins Home</a> | </span>
+                            {% endif %}
+                            {{ coins|length }} Coins{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
                     {% for coin in coins %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -36,6 +63,13 @@
                                             <p class="lead mb-0 text-capitalize"><span class="fw-bold">Condition:</span> {{ coin.condition }}</p>
                                             <p class="lead mb-0"><span class="fw-bold">Origin:</span> {{ coin.origin }}</p>
                                             <p class="lead mb-0"><span class="fw-bold">Year:</span> {{ coin.year }}</p>
+                                            {% if coin.metal %}
+                                                <p class="mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'coins' %}?metal={{ coin.metal.name }}">
+                                                        <i class="fas fa-tag me-1"></i>{{ coin.metal.friendly_name }}
+                                                    </a>
+                                                </p>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="row">
@@ -43,6 +77,12 @@
                                             <p class="h3 mb-0 text-left font-weight-bold text-center">${{ coin.price }}</p>
                                         </div>
                                     </div>
+                                    {% if request.user.is_superuser %}
+                                        <div class="ml-3 text-center">
+                                            <a href="">Edit</a> | 
+                                            <a class="text-danger" href="">Delete</a>
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -71,4 +111,41 @@
             </div>
         </div>
     </div>
+    <div class="btt-button float-end shadow-sm rounded-1 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fa-solid fa-arrow-up-from-bracket text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
