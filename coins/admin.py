@@ -8,6 +8,7 @@ class CoinsAdmin(admin.ModelAdmin):
         'name',
         'metal',
         'price',
+        'quantity',
         'origin',
         'year',
         'condition',
