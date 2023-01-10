@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'coins',
     'cart',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,10 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

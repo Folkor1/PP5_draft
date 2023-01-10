@@ -51,7 +51,7 @@ main {
 	z-index: -1;
 }
 
-a.category-badge > span.badge:hover {
+a.category-badge > span.badge:hover, .upd-btns:hover {
     background: #000000 !important;
     color: #fff !important;
 }

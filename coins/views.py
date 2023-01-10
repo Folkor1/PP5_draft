@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 from .models import Metal, Coins
+from .forms import CoinsForm
 
 
 def all_coins(request):
@@ -71,11 +74,83 @@ def coins_detail(request, coins_id):
     """
     A view to show individual coin details
     """
-
     coins = get_object_or_404(Coins, pk=coins_id)
-
     context = {
         'coins': coins,
     }
 
     return render(request, 'coins/coins_detail.html', context)
+
+
+@login_required
+def add_coins(request):
+    """
+    Add a product to the store
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = CoinsForm(request.POST, request.FILES)
+        if form.is_valid():
+            coins = form.save()
+            messages.success(request, 'Coins added successfully!')
+            return redirect(reverse('coins_detail', args=[coins.id]))
+        else:
+            messages.error(request, 'Failed to add coins. Please ensure the form is valid.')
+    else:
+        form = CoinsForm()
+
+    template = 'coins/add_coins.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_coins(request, coins_id):
+    """
+    Delete a product from the store
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    coins = get_object_or_404(Coins, pk=coins_id)
+    coins.delete()
+    messages.success(request, 'Coins deleted!')
+    return redirect(reverse('coins'))
+
+
+@login_required
+def edit_coins(request, coins_id):
+    """
+    Edit a product in the store
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    coins = get_object_or_404(Coins, pk=coins_id)
+    if request.method == 'POST':
+        form = CoinsForm(request.POST, request.FILES, instance=coins)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Coins successfully updated!')
+            return redirect(reverse('coins_detail', args=[coins.id]))
+        else:
+            messages.error(request, 'Failed to update. Please ensure the form is valid.')
+    else:
+        form = CoinsForm(instance=coins)
+        messages.info(request, f'You are editing {coins.name}')
+
+    template = 'coins/edit_coins.html'
+    context = {
+        'form': form,
+        'coins': coins,
+    }
+
+    return render(request, template, context)

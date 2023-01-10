@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container offset">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2 class="logo-font mb-4 h1">Coins Management</h2>
+                <h5 class="text-muted h2 mb-0">Edit</h5>
+                <hr class="mt-0 mb-5">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 h5">
+                <form method="POST" action="{% url 'edit_coins' coins.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                    <div class="h4 mt-5">
+                        <a class="upd-btns p-2 mb-3 badge bg-light text-black rounded-1 border border-dark me-2 text-decoration-none" href="{% url 'coins' %}">Cancel</a>
+                        <button class="upd-btns p-2 badge mb-3 bg-light text-black rounded-1 border border-dark" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
+{% endblock %}

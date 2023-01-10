@@ -22,7 +22,7 @@ def cart_contents(request):
             })
         else:
             coins = get_object_or_404(Coins, pk=item_id)
-            for quantity in item_data['items_by_price'].items():
+            for quantity in item_data.items():
                 total += quantity * coins.price
                 coins_count += quantity
                 cart_items.append({

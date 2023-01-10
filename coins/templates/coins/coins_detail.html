@@ -28,10 +28,16 @@
                     <p class="lead mb-0"><span class="fw-bold">Year:</span> {{ coins.year }}</p>
                     {% if coins.metal %}
                     <p class="mb-0">
-                        <a class="text-muted" href="{% url 'coins' %}?metal={{ coins.metal.name }}">
+                        <a class="text-muted h5 text-decoration-none" href="{% url 'coins' %}?metal={{ coins.metal.name }}">
                             <i class="fas fa-tag me-2"></i>{{ coins.metal.friendly_name }}
                         </a>
                     </p>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                    <div class="ml-3 h5 float-end">
+                        <a class="text-decoration-none" href="{% url 'edit_coins' coins.id %}">Edit</a> | 
+                        <a class="text-danger text-decoration-none" href="{% url 'delete_coins' coins.id %}">Delete</a>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -41,4 +47,47 @@
         <hr class="w-100 m-auto mb-3">
         <p class="mt-3 h4">{{ coins.description }}</p>
     </div>
+    <form class="form" action="{% url 'add_to_cart' coins.id %}" method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="col-12">
+                <p class="mt-3"><strong>Quantity:</strong></p>
+                <div class="form-group w-50">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="decrement-qty btn btn-black rounded-0" 
+                                data-item_id="{{ coins.id }}" id="decrement-qty_{{ coins.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input class="form-control qty_input" type="number"
+                            name="quantity" value="1" min="1" max="99"
+                            data-item_id="{{ coins.id }}"
+                            id="id_qty_{{ coins.id }}">
+                        <div class="input-group-append">
+                            <button class="increment-qty btn btn-black rounded-1"
+                                data-item_id="{{ coins.id }}" id="increment-qty_{{ coins.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col{% if s %}-12 mt-2{% endif %}">
+                <a href="{% url 'coins' %}" class="btn btn-outline-black rounded-1 mt-5">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Exploring</span>
+                </a>
+                <input type="submit" class="btn btn-black rounded-1 text-uppercase mt-5" value="Add to Cart">
+            </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </div>
+    </form>
 {% endblock %}
