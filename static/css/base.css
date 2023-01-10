@@ -56,6 +56,15 @@ a.category-badge > span.badge:hover, .upd-btns:hover {
     color: #fff !important;
 }
 
+.btn-file {
+    font-size: 25px;
+}
+
+img.rounded {
+    width: 400px;
+    height: 200px;
+}
+
 .offset {
     margin-top: 180px;
 }
@@ -72,6 +81,14 @@ a.category-badge > span.badge:hover, .upd-btns:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+#id_metal, #id_sku, #id_name, #id_description, #id_quantity, #id_price, #id_origin, #id_year, #id_condition, #id_era, #id_image_url  {
+    font-size: 20px;
+}
+
+#new-image {
+    margin-left: 150px;
 }
 
 /* from Bulma */
