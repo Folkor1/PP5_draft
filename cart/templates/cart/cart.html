@@ -58,7 +58,7 @@
                                     <th scope="col">Coins Info</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
+                                    <th scope="col" class="ps-4">Qty</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
@@ -78,7 +78,7 @@
                                         {% include "cart/quantity-form.html" %}
                                     </td>
                                     <td class="py-3 h4">
-                                        <p class="my-0 mt-2">${{ item.coins.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0 mt-2 ms-2">${{ item.coins.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
