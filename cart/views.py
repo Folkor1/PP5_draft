@@ -13,7 +13,7 @@ def view_cart(request):
 
 def add_to_cart(request, item_id):
     """
-    Add coin to the cart
+    Add coins to the cart
     """
 
     coins = get_object_or_404(Coins, pk=item_id)
