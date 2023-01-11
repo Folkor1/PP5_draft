@@ -79,7 +79,7 @@
                                     </div>
                                     {% if request.user.is_superuser %}
                                         <div class="ml-3 text-center">
-                                            <a class="text-decoration-none" href="{% url 'edit_coins' coin.id %}">Edit</a> | 
+                                            <a class="text-decoration-none text-primary" href="{% url 'edit_coins' coin.id %}">Edit</a> | 
                                             <a class="text-danger text-decoration-none" href="{% url 'delete_coins' coin.id %}">Delete</a>
                                         </div>
                                     {% endif %}

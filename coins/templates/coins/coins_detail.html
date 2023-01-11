@@ -35,7 +35,7 @@
                     {% endif %}
                     {% if request.user.is_superuser %}
                     <div class="ml-3 h5 float-end">
-                        <a class="text-decoration-none" href="{% url 'edit_coins' coins.id %}">Edit</a> | 
+                        <a class="text-decoration-none text-primary" href="{% url 'edit_coins' coins.id %}">Edit</a> | 
                         <a class="text-danger text-decoration-none" href="{% url 'delete_coins' coins.id %}">Delete</a>
                     </div>
                     {% endif %}
@@ -44,33 +44,33 @@
         </div>
     </div>
     <div class="col-12 col-md-8 mx-auto">
-        <hr class="w-100 m-auto mb-3">
-        <p class="mt-3 h4">{{ coins.description }}</p>
-        <hr>
+        <hr class="w-100 m-auto mb-4">
+        <p class="h4">{{ coins.description }}</p>
+        <hr class="mb-4">
     </div>
     <div>
         <form class="form" action="{% url 'add_to_cart' coins.id %}" method="POST">
             {% csrf_token %}
-            <div class="text-center">
-                <div class="col-12">
-                    <p class="mt-3 h4"><strong>Quantity:</strong></p>
-                    <div class="form-group w-25 mx-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <button class="decrement-qty btn border-0" 
-                                    data-bs-item_id="{{ coins.id }}" id="decrement-qty_{{ coins.id }}">
+            <div class="container w-25 mt-4">
+                <div class="row text-center">
+                    <div class="col-md-auto text-center form-group border border-dark bg-dark text-white rounded-1 p-0 add-to-cart">
+                        <div class="input-group input-group-{{ coins.id }}">
+                            <div class="input-group-prepend ">
+                                <button class="decrement-qty btn border-0 ps-1 pe-0 text-white decrement-qty_{{ coins.id }}" 
+                                    data-item_id="{{ coins.id }}">
                                     <span class="icon">
                                         <i class="fas fa-minus"></i>
                                     </span>
                                 </button>
                             </div>
-                            <input class="form-control qty_input fw-bold rounded-1" type="number"
+                            <input class="form-control qty_input text-center fw-bold rounded-1 w-auto px-0 border-0 bg-dark text-white id_qty_{{ coins.id }}" type="number"
                                 name="quantity" value="1" min="1" max="99"
-                                data-bs-item_id="{{ coins.id }}"
-                                id="id_qty_{{ coins.id }}">
+                                data-item_id="{{ coins.id }}"
+                                id="id_qty_{{ coins.id }}"
+                                style="font-size: 20px; width: 50px">
                             <div class="input-group-append">
-                                <button class="increment-qty btn border-0"
-                                    data-bs-item_id="{{ coins.id }}" id="increment-qty_{{ coins.id }}">
+                                <button class="increment-qty btn border-0 pe-1 ps-0 bg-dark text-white increment-qty_{{ coins.id }}"
+                                    data-item_id="{{ coins.id }}">
                                     <span class="icon">
                                         <i class="fas fa-plus"></i>
                                     </span>
@@ -78,18 +78,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-auto">
+                        <input type="submit" class="btn rounded-1 text-uppercase border border-dark pt-2 add-to-cart add-btn bg-dark text-light" value="Add to Cart">
+                    </div>
                 </div>
-                <div class="col{% if s %}-12 mt-2{% endif %} mt-5">
-                    <a href="{% url 'coins' %}" class="btn btn-outline-black rounded-1 mt-5">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase h4">Keep Exploring</span>
-                    </a>
-                    <input type="submit" class="btn rounded-1 text-uppercase mt-5 ms-5" value="Add to Cart">
-                </div>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div>
+            <div class="col{% if s %}-12 mt-2{% endif %} text-center">
+                <a href="{% url 'coins' %}" class="btn btn-outline-black rounded-1 mt-5 me-5 border-0">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase h4">Keep Exploring</span>
+                </a>
+            </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </form>
     </div>
 {% endblock %}
