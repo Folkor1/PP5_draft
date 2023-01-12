@@ -11,7 +11,7 @@ def all_coins(request):
     """
     A view to show all coins
     """
-    coins = Coins.objects.all()
+    coins = Coins.objects.filter(quantity__gt=0)
     query = None
     eras = None
     metals = None
@@ -65,6 +65,7 @@ def all_coins(request):
         'search_term': query,
         'current_metals': metals,
         'current_sorting': current_sorting,
+
     }
 
     return render(request, 'coins/coins.html', context)

@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
                                     <p class="my-0">Price: ${{ item.coins.price }}</p>
-                                    <p><strong>Subtotal: </strong>${{ item.coins.price | calc_subtotal:item.quantity }}</p>
+                                    <p><strong>Subtotal: </strong>${{ item.coins.price | calc_subtotal:item.coin_quantity }}</p>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     {% include "cart/quantity-form.html" %}
@@ -78,7 +78,7 @@
                                         {% include "cart/quantity-form.html" %}
                                     </td>
                                     <td class="py-3 h4">
-                                        <p class="my-0 mt-2 ms-2">${{ item.coins.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0 mt-2 ms-2">${{ item.coins.price | calc_subtotal:item.coin_quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}

@@ -17,17 +17,17 @@ def cart_contents(request):
             coins_count += item_data
             cart_items.append({
                 'item_id': item_id,
-                'quantity': item_data,
+                'coin_quantity': item_data,
                 'coins': coins,
             })
         else:
             coins = get_object_or_404(Coins, pk=item_id)
-            for quantity in item_data.items():
-                total += quantity * coins.price
-                coins_count += quantity
+            for coin_quantity in item_data.items():
+                total += coin_quantity * coins.price
+                coins_count += coin_quantity
                 cart_items.append({
                     'item_id': item_id,
-                    'quantity': quantity,
+                    'coin_quantity': coin_quantity,
                     'coins': coins,
                 })
 

@@ -49,40 +49,58 @@
         <hr class="mb-4">
     </div>
     <div>
-        <form class="form" action="{% url 'add_to_cart' coins.id %}" method="POST">
-            {% csrf_token %}
-            <div class="container w-25 mt-4">
-                <div class="row text-center">
-                    <div class="col-md-auto text-center form-group border border-dark bg-dark text-white rounded-1 p-0 add-to-cart">
-                        <div class="input-group input-group-{{ coins.id }}">
-                            <div class="input-group-prepend ">
-                                <button class="decrement-qty btn border-0 ps-1 pe-0 text-white decrement-qty_{{ coins.id }}" 
-                                    data-item_id="{{ coins.id }}">
-                                    <span class="icon">
-                                        <i class="fas fa-minus"></i>
-                                    </span>
-                                </button>
-                            </div>
-                            <input class="form-control qty_input text-center fw-bold rounded-1 w-auto px-0 border-0 bg-dark text-white id_qty_{{ coins.id }}" type="number"
-                                name="quantity" value="1" min="1" max="99"
-                                data-item_id="{{ coins.id }}"
-                                id="id_qty_{{ coins.id }}"
-                                style="font-size: 20px; width: 50px">
-                            <div class="input-group-append">
-                                <button class="increment-qty btn border-0 pe-1 ps-0 bg-dark text-white increment-qty_{{ coins.id }}"
-                                    data-item_id="{{ coins.id }}">
-                                    <span class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </span>
-                                </button>
+        {% if coins.quantity != 0 %}
+            <form class="form" action="{% url 'add_to_cart' coins.id %}" method="POST">
+                {% csrf_token %}
+                <div class="container w-25 mt-4">
+                    <div class="row text-center">
+                        {% if coins.quantity > 1 %}
+                        <div class="col-md-auto text-center form-group border border-dark bg-dark text-white rounded-1 p-0 add-to-cart">
+                            <div class="input-group input-group-{{ coins.id }}">
+                                <div class="input-group-prepend ">
+                                    <button class="decrement-qty btn border-0 ps-1 pe-0 text-white decrement-qty_{{ coins.id }}" 
+                                        data-item_id="{{ coins.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <input class="form-control qty_input text-center fw-bold rounded-1 w-auto px-0 border-0 bg-dark text-white id_qty_{{ coins.id }}" type="number"
+                                    name="coin_quantity" value="1" min="1" max="99"
+                                    data-item_id="{{ coins.id }}"
+                                    id="id_qty_{{ coins.id }}"
+                                    style="font-size: 20px; width: 50px">
+                                <div class="input-group-append">
+                                    <button class="increment-qty btn border-0 pe-1 ps-0 bg-dark text-white increment-qty_{{ coins.id }}"
+                                        data-item_id="{{ coins.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-auto">
-                        <input type="submit" class="btn rounded-1 text-uppercase border border-dark pt-2 add-to-cart add-btn bg-dark text-light" value="Add to Cart">
+                        {% else %}
+                            <input type="number" name="coin_quantity" value="1" data-item_id="{{ coins.id }}" id="id_qty_{{ coins.id }}" class="d-none">
+                            <p class="col-md-auto h3 text-center pt-1 fw-bold me-4"><i class="fa-regular fa-star me-1 gold-color"></i>Unique</p>
+                        {% endif %}
+                        <div class="col-md-auto">
+                            <input type="submit" class="btn rounded-1 text-uppercase border border-dark pt-2 add-to-cart add-btn bg-dark text-light" value="Add to Cart">
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="text-center">
+                    <a href="{% url 'coins' %}" class="btn btn-outline-black mt-5 me-5 border-0">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase h4">Keep Exploring</span>
+                    </a>
+                </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+        {% else %}
+            <p class="text-center h2">Sold out!</p>
             <div class="text-center">
                 <a href="{% url 'coins' %}" class="btn btn-outline-black mt-5 me-5 border-0">
                     <span class="icon">
@@ -91,8 +109,7 @@
                     <span class="text-uppercase h4">Keep Exploring</span>
                 </a>
             </div>
-            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-        </form>
+        {% endif %}
     </div>
 {% endblock %}
 

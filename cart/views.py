@@ -17,15 +17,18 @@ def add_to_cart(request, item_id):
     """
 
     coins = get_object_or_404(Coins, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    unique = Coins.objects.filter(quantity=1)
+    coin_quantity = int(request.POST.get('coin_quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
     if item_id in list(cart.keys()):
-        cart[item_id] += quantity
-        messages.success(request, f'Updated {coins.name} quantity to {cart[item_id]}')
+        if item_id in unique:
+            cart[item_id] = 1
+        else:
+            cart[item_id] += coin_quantity
     else:
-        cart[item_id] = quantity
+        cart[item_id] = coin_quantity
         messages.success(request, f'Added {coins.name} to cart')
 
     request.session['cart'] = cart
@@ -38,11 +41,11 @@ def adjust_cart(request, item_id):
     """
 
     coins = get_object_or_404(Coins, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    coin_quantity = int(request.POST.get('coin_quantity'))
     cart = request.session.get('cart', {})
 
-    if quantity > 0:
-        cart[item_id] = quantity
+    if coin_quantity > 0:
+        cart[item_id] = coin_quantity
         messages.success(request, f'Updated {coins.name} quantity to {cart[item_id]}')
     else:
         cart.pop(item_id)
