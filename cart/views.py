@@ -25,13 +25,13 @@ def add_to_cart(request, item_id):
     if item_id in list(cart.keys()):
         if int(item_id) in unique:
             cart[item_id] = 1
-            messages.info(request, f'Coin {coins.name} already added to cart')
+            messages.info(request, f'Coin `{coins.name}` already added to cart')
         else:
             cart[item_id] += coin_quantity
-            messages.success(request, f'Updated quantity of coin {coins.name} in cart')
+            messages.success(request, f'Updated quantity of coin `{coins.name}` in cart')
     else:
         cart[item_id] = coin_quantity
-        messages.success(request, f'Coin {coins.name} added to cart')
+        messages.success(request, f'Coin `{coins.name}` added to cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -48,10 +48,10 @@ def adjust_cart(request, item_id):
 
     if coin_quantity > 0:
         cart[item_id] = coin_quantity
-        messages.success(request, f'Updated {coins.name} quantity to {cart[item_id]}')
+        messages.success(request, f'Updated `{coins.name}` quantity to {cart[item_id]}')
     else:
         cart.pop(item_id)
-        messages.success(request, f'Removed {coins.name} from the cart')
+        messages.success(request, f'Removed `{coins.name}` from the cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -67,7 +67,7 @@ def remove_from_cart(request, item_id):
         cart = request.session.get('cart', {})
 
         cart.pop(item_id)
-        messages.success(request, f'Removed {coins.name} from the cart')
+        messages.success(request, f'Removed `{coins.name}` from the cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)

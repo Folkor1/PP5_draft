@@ -1,0 +1,45 @@
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+        <p class="text-primary h2"><i class="fa-sharp fa-solid fa-circle-check me-2 h3"></i>Success!</p>
+        <div class="row">
+            <div class="col h4">
+                {{ message }}
+                <hr class="mt-1 mb-3">
+            </div>
+        </div>
+    {% if grand_total and not on_profile_page %}
+        <p class="logo-font bg-white text-black py-1 h3">Cart ({{ coins_count }})</p>
+        <div class="cart-notification-wrapper arrow-up arrow-success">
+            {% for item in cart_items %}
+                <div class="row">
+                    <div class="col-6 my-1">
+                        {% if item.coins.image %}
+                        <img class="w-100" src="{{ item.coins.image.url }}" alt="{{ item.coins.name }}">
+                        {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.coins.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-6 h4">
+                        <p class="my-0"><strong>{{ item.coins.name }}</strong></p>
+                        <p class="my-0 small text-muted">Qty: {{ item.coin_quantity }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="mt-3 mb-1 text-black h4 fw-bold">
+                Total: 
+                <span class="float-right">${{ total|floatformat:2 }}</span>
+            </p>
+              <a href="{% url 'view_cart' %}" class="btn btn-block border-0 w-100 bg-dark rounded-1">
+                  <span class="text-uppercase h4 text-light">Go To Secure Checkout</span>
+                  <span class="icon">
+                      <i class="fas fa-lock text-light"></i>
+                  </span>
+              </a>
+          </div>
+      </div>
+      {% endif %}
+    </div>
+</div>
