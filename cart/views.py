@@ -65,7 +65,7 @@ def remove_from_cart(request, item_id):
     try:
         coins = get_object_or_404(Coins, pk=item_id)
         cart = request.session.get('cart', {})
-        
+
         cart.pop(item_id)
         messages.success(request, f'Removed `{coins.name}` from the cart')
 
