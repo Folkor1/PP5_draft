@@ -17,19 +17,21 @@ def add_to_cart(request, item_id):
     """
 
     coins = get_object_or_404(Coins, pk=item_id)
-    unique = Coins.objects.filter(quantity=1)
+    unique = Coins.objects.filter(quantity=1).values_list('id', flat=True)
     coin_quantity = int(request.POST.get('coin_quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
     if item_id in list(cart.keys()):
-        if item_id in unique:
+        if int(item_id) in unique:
             cart[item_id] = 1
+            messages.info(request, f'Coin {coins.name} already added to cart')
         else:
             cart[item_id] += coin_quantity
+            messages.success(request, f'Updated quantity of coin {coins.name} in cart')
     else:
         cart[item_id] = coin_quantity
-        messages.success(request, f'Added {coins.name} to cart')
+        messages.success(request, f'Coin {coins.name} added to cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)

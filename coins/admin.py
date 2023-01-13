@@ -14,6 +14,7 @@ class CoinsAdmin(admin.ModelAdmin):
         'condition',
         'era',
         'image',
+        'id',
     )
 
     ordering = ('metal',)

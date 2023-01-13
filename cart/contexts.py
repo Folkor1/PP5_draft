@@ -13,12 +13,14 @@ def cart_contents(request):
     for item_id, item_data in cart.items():
         if isinstance(item_data, int):
             coins = get_object_or_404(Coins, pk=item_id)
+            unique = coins.quantity
             total += item_data * coins.price
             coins_count += item_data
             cart_items.append({
                 'item_id': item_id,
                 'coin_quantity': item_data,
                 'coins': coins,
+                'unique': unique,
             })
         else:
             coins = get_object_or_404(Coins, pk=item_id)

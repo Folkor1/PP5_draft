@@ -74,9 +74,16 @@
                                     <td class="py-3 h3">
                                         <p class="my-0 mt-2">${{ item.coins.price }}</p>
                                     </td>
-                                    <td class="py-3 w-25 h5">
-                                        {% include "cart/quantity-form.html" %}
-                                    </td>
+                                    {% if item.unique != 1 %}
+                                        <td class="py-3 w-25 h5">
+                                            {% include "cart/quantity-form.html" %}
+                                        </td>
+                                    {% else %}
+                                        <td class="w-25">
+                                            <p class="h4 pt-4 ps-3 fw-bold">Unique: 1</p>
+                                            <a class="remove-item text-danger h5 ms-3 text-decoration-none" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        </td>
+                                    {% endif %}
                                     <td class="py-3 h4">
                                         <p class="my-0 mt-2 ms-2">${{ item.coins.price | calc_subtotal:item.coin_quantity }}</p>
                                     </td>
