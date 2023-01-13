@@ -96,7 +96,7 @@ def add_coins(request):
         form = CoinsForm(request.POST, request.FILES)
         if form.is_valid():
             coins = form.save()
-            messages.success(request, 'Coins added successfully!')
+            messages.info(request, 'Coins added successfully!')
             return redirect(reverse('coins_detail', args=[coins.id]))
         else:
             messages.error(request, 'Failed to add coins. Please ensure the form is valid.')
@@ -122,7 +122,7 @@ def delete_coins(request, coins_id):
 
     coins = get_object_or_404(Coins, pk=coins_id)
     coins.delete()
-    messages.success(request, 'Coins deleted!')
+    messages.info(request, 'Coins deleted!')
     return redirect(reverse('coins'))
 
 
@@ -140,13 +140,13 @@ def edit_coins(request, coins_id):
         form = CoinsForm(request.POST, request.FILES, instance=coins)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Coins successfully updated!')
+            messages.info(request, 'Coins successfully updated!')
             return redirect(reverse('coins_detail', args=[coins.id]))
         else:
             messages.error(request, 'Failed to update. Please ensure the form is valid.')
     else:
         form = CoinsForm(instance=coins)
-        messages.info(request, f'You are editing {coins.name}')
+        messages.info(request, f'You are editing `{coins.name}` coin')
 
     template = 'coins/edit_coins.html'
     context = {
