@@ -37,8 +37,8 @@ class Order(models.Model):
         Override the original save method to set the order number
         if it hasn't been set already
         """
-        if not self.order_number:
-            self.order_number = self._generate_order_number()
+        if not self.order_nr:
+            self.order_nr = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def update_total(self):
@@ -50,7 +50,7 @@ class Order(models.Model):
         self.save()
 
     def __str__(self):
-        return self.order_number
+        return self.order_nr
 
 
 class OrderLineItem(models.Model):
