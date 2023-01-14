@@ -38,27 +38,38 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
-            for item_id, item_data in cart.items():
-                try:
-                    coins = Coins.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            coins=coins,
-                            coin_quantity=item_data,
-                        )
-                        order_line_item.save()
-                except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in cart wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
-                    order.delete()
-                    return redirect(reverse('view_cart'))
 
-            # Save the info to the user's profile if all is well
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_nr]))
+            for i in cart.items():
+                coin_by_id = Coins.objects.get(id=i[0])
+                if coin_by_id.quantity < i[1]:
+                    messages.error(request, f'Sorry, only {coin_by_id.quantity} `{coin_by_id.name}` are left in stock. Please adjust the cart.')
+                else:
+                    for item_id, item_data in cart.items():
+                        try:
+                            coins = Coins.objects.get(id=item_id)
+                            coin = get_object_or_404(Coins, id=item_id)
+                            if isinstance(item_data, int):
+                                order_line_item = OrderLineItem(
+                                    order=order,
+                                    coins=coins,
+                                    coin_quantity=item_data,
+                                )
+
+                                coin.quantity = coin.quantity - item_data
+                                coin.save()
+                                order_line_item.save()
+                        except Coins.DoesNotExist:
+                            messages.error(request, (
+                                "One of the coins in cart wasn't found in our database."
+                                "Please call us for assistance!")
+                            )
+                            order.delete()
+                            return redirect(reverse('view_cart'))
+
+                    # Save the info to the user's profile if all is well
+                    request.session['save_info'] = 'save-info' in request.POST
+                    return redirect(reverse('checkout_success', args=[order.order_nr]))
+            return redirect(reverse('view_cart'))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')

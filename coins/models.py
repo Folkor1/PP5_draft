@@ -40,7 +40,7 @@ class Coins(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    quantity = models.IntegerField(default=0)
+    quantity = models.PositiveIntegerField(default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     origin = models.CharField(max_length=254)
     year = models.CharField(max_length=20)
