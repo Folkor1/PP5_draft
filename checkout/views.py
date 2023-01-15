@@ -16,6 +16,15 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    insufficient_coins = []
+
+    def coin_amount_check():
+        for i in cart.items():
+            coin_by_id = Coins.objects.get(id=i[0])
+            if coin_by_id.quantity < i[1]:
+                insufficient_coins.append(i[1])
+                messages.error(request, f'Sorry, only {coin_by_id.quantity} `{coin_by_id.name}` are left in stock. Please adjust the cart.')
+
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
@@ -38,38 +47,36 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
+            coin_amount_check()
 
-            for i in cart.items():
-                coin_by_id = Coins.objects.get(id=i[0])
-                if coin_by_id.quantity < i[1]:
-                    messages.error(request, f'Sorry, only {coin_by_id.quantity} `{coin_by_id.name}` are left in stock. Please adjust the cart.')
-                else:
-                    for item_id, item_data in cart.items():
-                        try:
-                            coins = Coins.objects.get(id=item_id)
-                            coin = get_object_or_404(Coins, id=item_id)
-                            if isinstance(item_data, int):
-                                order_line_item = OrderLineItem(
-                                    order=order,
-                                    coins=coins,
-                                    coin_quantity=item_data,
-                                )
-
-                                coin.quantity = coin.quantity - item_data
-                                coin.save()
-                                order_line_item.save()
-                        except Coins.DoesNotExist:
-                            messages.error(request, (
-                                "One of the coins in cart wasn't found in our database."
-                                "Please call us for assistance!")
+            if insufficient_coins:
+                order.delete()
+                return redirect(reverse('view_cart'))
+            else:
+                for item_id, item_data in cart.items():
+                    try:
+                        coins = Coins.objects.get(id=item_id)
+                        coin = get_object_or_404(Coins, id=item_id)
+                        if isinstance(item_data, int):
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                coins=coins,
+                                coin_quantity=item_data,
                             )
-                            order.delete()
-                            return redirect(reverse('view_cart'))
+                            coin.quantity = coin.quantity - item_data
+                            coin.save()
+                            order_line_item.save()
+                    except Coins.DoesNotExist:
+                        messages.error(request, (
+                            "One of the coins in cart wasn't found in our database."
+                            "Please call us for assistance!")
+                        )
+                        order.delete()
+                        return redirect(reverse('view_cart'))
 
-                    # Save the info to the user's profile if all is well
-                    request.session['save_info'] = 'save-info' in request.POST
-                    return redirect(reverse('checkout_success', args=[order.order_nr]))
-            return redirect(reverse('view_cart'))
+                # Save the info to the user's profile if all is well
+                request.session['save_info'] = 'save-info' in request.POST
+                return redirect(reverse('checkout_success', args=[order.order_nr]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -151,9 +158,10 @@ def checkout_success(request, order_nr):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_nr}. A confirmation \
-        email will be sent to {order.email}.')
+    messages.success(request, f'Order successfully processed! Your order number is \
+        {order_nr} \
+        A confirmationemail will be sent to \
+        {order.email}.')
 
     if 'cart' in request.session:
         del request.session['cart']
