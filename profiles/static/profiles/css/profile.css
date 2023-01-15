@@ -1,0 +1,11 @@
+#id_default_phone_nr,
+#id_default_street_address1,
+#id_default_street_address2,
+#id_default_town_or_city,
+#id_default_county,
+#id_default_postcode,
+#id_default_country {
+    border-radius: 5px !important;
+    font-size: 20px;
+    padding-bottom: 0;
+}
