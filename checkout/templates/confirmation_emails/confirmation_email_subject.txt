@@ -1,0 +1,1 @@
+Golden Coin Confirmation for Order Number {{ order.order_nr }}

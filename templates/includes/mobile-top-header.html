@@ -30,13 +30,13 @@
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="" class="dropdown-item h5">Product Management</a>
+                <a href="{% url 'add_coins' %}" class="dropdown-item h5">Product Management</a>
             {% endif %}
-            <a href="" class="dropdown-item h5">My Profile</a>
-            <a href="" class="dropdown-item h5">Logout</a>
+            <a href="{% url 'profile' %}" class="dropdown-item h5">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item h5">Logout</a>
         {% else %}
-            <a href="" class="dropdown-item h5">Register</a>
-            <a href="" class="dropdown-item h5">Login</a>
+            <a href="{% url 'account_signup' %}" class="dropdown-item h5">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item h5">Login</a>
         {% endif %}
     </div>
 </li>
