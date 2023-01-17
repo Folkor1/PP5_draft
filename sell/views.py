@@ -14,7 +14,7 @@ def sell_coins(request):
         if form.is_valid():
             sell = form.save()
             messages.success(request, 'We will review the offer and get in touch with you.')
-            return redirect(reverse('home'))
+            return redirect(reverse('sell_coins'))
         else:
             messages.error(request, 'Failed to add coin.')
     else:

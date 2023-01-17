@@ -8,17 +8,17 @@ def contact(request):
     """
     Contact view
     """
-    contact = get_object_or_404(Contact, pk=name)
+
     if request.method == 'POST':
-        form = ContactForm(request.POST, instance=contact)
+        form = ContactForm(request.POST)
         if form.is_valid():
             contact = form.save()
             messages.success(request, 'We will be in touch with you shortly.')
-            return redirect(reverse('home'))
+            return redirect(reverse('contact'))
         else:
             messages.error(request, 'Failed to send the message.')
     else:
-        form = ContactForm(instance=contact)
+        form = ContactForm()
 
     template = 'contact/contact.html'
     context = {

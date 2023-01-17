@@ -7,7 +7,7 @@
                 {{ message }}
             </div>
         </div>
-    {% if grand_total and not on_contact_page %}
+    {% if grand_total and not on_profile_page and not on_contact_page and not on_sell_page %}
         <hr class="mt-1 mb-3">
         <p class="logo-font bg-white text-black py-1 h3">Cart ({{ coins_count }})</p>
         <div class="cart-notification-wrapper arrow-up arrow-success">
