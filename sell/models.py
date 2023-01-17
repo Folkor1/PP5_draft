@@ -19,9 +19,5 @@ class Sell(models.Model):
     def __str__(self):
         return self.coin_name
 
-    @property
-    def price_display(self):
-        return "$%s" % self.ask_price
-
     class Meta:
         verbose_name_plural = 'Sell'

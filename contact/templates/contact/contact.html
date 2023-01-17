@@ -6,20 +6,20 @@
     <div class="container offset">
         <div class="row">
             <div class="col-12 col-md-6">
-                <h1 class="logo-font mb-0 text-uppercase">Sell coins</h1>
+                <h1 class="logo-font mb-0 text-uppercase">Contact form</h1>
                 <hr class="mt-0 mb-5">
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-md-6 h4">
-                <p class="text-muted h4">Add the coin info you wish to sell.</p>
-                <form method="POST" action="{% url 'sell_coins' %}" class="form mb-2" enctype="multipart/form-data">
+                <p class="text-muted h4">Send us your enquiry.</p>
+                <form method="POST" action="{% url 'contact' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="mt-5 text-center">
                         <a class="add-btn py-2 px-4 mb-3 fw-bold btn btn-primary btn-lg bg-dark text-light rounded-1 border border-dark me-2 text-decoration-none add-to-cart" href="{% url 'home' %}">Cancel</a>
-                        <button class="add-btn py-2 px-4 fw-bold btn btn-primary btn-lg mb-3 bg-dark text-light rounded-1 border border-dark add-to-cart" type="submit">Add Coins</button>
+                        <button class="add-btn py-2 px-4 fw-bold btn btn-primary btn-lg mb-3 bg-dark text-light rounded-1 border border-dark add-to-cart" type="submit">Submit</button>
                     </div>
                 </form>
             </div>            

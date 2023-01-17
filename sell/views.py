@@ -13,16 +13,17 @@ def sell_coins(request):
         form = SellForm(request.POST, request.FILES)
         if form.is_valid():
             sell = form.save()
-            messages.success(request, 'Thanks! We will review the offer and get in touch with you.')
+            messages.success(request, 'We will review the offer and get in touch with you.')
             return redirect(reverse('home'))
         else:
-            messages.error(request, 'Failed to ')
+            messages.error(request, 'Failed to add coin.')
     else:
         form = SellForm()
 
     template = 'sell/sell.html'
     context = {
         'form': form,
+        'on_sell_page': True
     }
 
     return render(request, template, context)
