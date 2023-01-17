@@ -1,14 +1,14 @@
 from django import forms
-from .models import Coins, Metal
+from .models import Sell
 
 
-class CoinsForm(forms.ModelForm):
+class SellForm(forms.ModelForm):
 
     class Meta:
-        model = Coins
+        model = Sell
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False)
+    image = forms.ImageField(label='Image', required=True)
 
     def __init__(self, *args, **kwargs):
         """
@@ -16,23 +16,18 @@ class CoinsForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        metal = Metal.objects.all()
-        friendly_names = [(c.id, c.get_friendly_name()) for c in metal]
         placeholders = {
-            'metal': 'Metal',
-            'sku': 'SKU',
-            'name': 'Name',
+            'email': 'E-mail',
+            'coin_name': 'Coin name',
             'description': 'Description',
-            'price': 'Price $',
-            'quantity': 'Quantity',
+            'metal': 'Metal',
             'origin': 'Origin',
-            'year': 'Year',
             'condition': 'Condition',
-            'era': 'Era',
-            'image_url': 'Image URL',
-            'image': 'Imagem',
+            'ask_price': 'Ask price $',
+            'negotiable': 'Negotiable',
+            'image': 'Image',
         }
-        self.fields['metal'].choices = friendly_names
+
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
@@ -40,4 +35,7 @@ class CoinsForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'rounded-1'
-            self.fields[field].label = False
+            if field != 'negotiable':
+                self.fields[field].label = False
+            else:
+                self.fields[field].widget.attrs['class'] = 'mt-0'

@@ -17,11 +17,7 @@
                 <form method="POST" action="{% url 'edit_coins' coins.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            <div class="text-center">{{ field }}</div>
-                        {% endif %}
+                        {{ field|as_crispy_field }}
                     {% endfor %}
                     <div class="h4 mt-5 text-center">
                         <a class="add-btn py-2 px-4 mb-3 fw-bold btn btn-primary btn-lg bg-dark text-light rounded-1 border border-dark me-2 text-decoration-none add-to-cart" href="{% url 'coins' %}">Cancel</a>

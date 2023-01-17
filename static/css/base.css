@@ -78,19 +78,33 @@ img.rounded {
     cursor: pointer;
 }
 
-#id_metal,
-#id_sku,
-#id_name,
-#id_description,
-#id_quantity,
-#id_price,
-#id_origin,
-#id_year,
-#id_condition,
-#id_era,
-#id_image_url,
+input[type="text"],
+input[type="hidden"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+select[name="condition"] {
+    font-size: 21px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
 .login-btns {
     font-size: 20px;
+}
+
+#id_metal,
+#id_era,
+#id_condition,
+input[type="file"] { 
+    font-size: 21px;
+    padding-top: 3px;
+    padding-bottom: 0;
+}
+
+textarea[name="description"] {
+    font-size: 21px !important;
 }
 
 #new-image {
@@ -107,15 +121,6 @@ img.rounded {
     font-size: 20px;
 }
 
-input[type="text"],
-input[type="hidden"],
-input[type="email"],
-input[type="password"] {
-    font-size: 21px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 #new-image {
     display: block;
     text-align: center;
@@ -124,11 +129,12 @@ input[type="password"] {
     padding: 6px 12px;
     z-index:2;
     background:white;
+    border: 1px solid rgb(212, 210, 210);
+    border-radius: 3px;
 }
 
 input::placeholder {
     transform: translateY(5px);
-    font-size: 25px;
 }
 
 .message-container {
@@ -152,6 +158,10 @@ input::placeholder {
     font-size: 22px;
     padding-top: 10px;
     padding-bottom: 3px;
+}
+
+#div_id_image {
+    margin-top: 50px;
 }
 
 /* from Bulma */
