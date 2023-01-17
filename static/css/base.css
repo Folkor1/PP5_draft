@@ -28,12 +28,12 @@ main {
     background: brown;
 }
 
-.gold-color {
-    color: #A77509;
-}
-
 .bronze-color {
     color: brown;
+}
+
+.gold-color {
+    color: #A77509;
 }
 
 .overlay {
@@ -78,33 +78,36 @@ img.rounded {
     cursor: pointer;
 }
 
-input[type="text"],
-input[type="hidden"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="url"],
-select[name="condition"] {
-    font-size: 21px;
-    padding-top: 4px;
-    padding-bottom: 2px;
-}
-
 .login-btns {
     font-size: 20px;
 }
 
-#id_metal,
-#id_era,
-#id_condition,
-input[type="file"] { 
-    font-size: 21px;
-    padding-top: 3px;
-    padding-bottom: 0;
+textarea[name="description"],
+#id_login,
+#id_password,
+#id_email,
+#id_email2,
+#id_username,
+#id_password1,
+#id_password2,
+.input-flds,
+.input-group-text { 
+    font-size: 20px !important;
+    padding-bottom: 0 !important;
 }
 
-textarea[name="description"] {
-    font-size: 21px !important;
+label[for="id_login"],
+label[for="id_password"],
+label[for="id_email"],
+label[for="id_email2"],
+label[for="id_username"],
+label[for="id_password1"],
+label[for="id_password2"] {
+    display: none;
+}
+
+#id_remember {
+    margin-top: 0;
 }
 
 #new-image {
@@ -133,10 +136,6 @@ textarea[name="description"] {
     border-radius: 3px;
 }
 
-input::placeholder {
-    transform: translateY(5px);
-}
-
 .message-container {
     position: fixed;
     top: 100px;
@@ -152,12 +151,6 @@ input::placeholder {
     height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-#id_country {
-    font-size: 22px;
-    padding-top: 10px;
-    padding-bottom: 3px;
 }
 
 #div_id_image {

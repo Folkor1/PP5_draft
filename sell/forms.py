@@ -34,7 +34,7 @@ class SellForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'rounded-1'
+            self.fields[field].widget.attrs['class'] = 'rounded-1 input-flds'
             if field != 'negotiable':
                 self.fields[field].label = False
             else:
